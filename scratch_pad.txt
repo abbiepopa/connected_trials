@@ -1,0 +1,28 @@
+CREATE DATABASE testDB;
+
+--don't make a database with capital letters in, it doesn't believe they exist!
+
+\list
+lists all the databases
+
+testdb < pg_restore opentrials-api-2017-07-01.dump
+
+\c testdb;
+
+CREATE TABLE toys (
+	birdies varchar(25),
+	mouseys varchar(25)
+	);
+	
+INSERT INTO toys (birdies, mouseys)
+	VALUES ('twitter', 'squeaky');
+	
+September 12, 2017
+
+I used https://www.postgresql.org/docs/9.3/static/auth-pg-hba-conf.html to edit my conf file so 
+I wouldn't get the error that didn't allow me to run psql from terminal
+
+I used https://stackoverflow.com/questions/36155219/psql-command-not-found-mac when the psql
+command wasn't found
+
+this describes dumps https://www.postgresql.org/docs/9.1/static/backup-dump.html
